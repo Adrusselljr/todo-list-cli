@@ -5,6 +5,8 @@ console.log("Welcome to the To-Do List Manager Application! ")
 console.log("==============================================")
 
 let list = []
+let isComplete = []
+
 while(true) {
 
     if(list.length === 0) {
@@ -12,8 +14,16 @@ while(true) {
     }
     else {
         console.log(`You have ${list.length} to-do item(s).`)
-        for(let i = 0; i <list.length; i++) {
-            console.log(`${i + 1}. ${list[i]}`)
+        
+        for(let i = 0; i < list.length; i++) {
+            let output = isComplete[i]
+            if(isComplete[i] === true) {
+                output = "[Complete]"
+            }
+            else {
+                output = "[Incomplete]"
+            }
+            console.log(`${i + 1}. ${output} ${list[i]}`)
         }
     }
     
@@ -26,11 +36,21 @@ while(true) {
         console.log("~ Creating a new to-do item ~")
         let addTodo = prompt("What is this to-do item called? ")
         list.push(addTodo)
-        console.log(list)
+        isComplete.push(false)
     }
+        
     if(todo === 2) {
         console.log("~ Completing a to-do item ~")
-        let completeTodo = prompt("Which to-do item would you like to complete? ")
+
+        let completeTodo = Number(prompt("Which to-do item would you like to complete? "))
+
+        for(let i = 0; i < isComplete.length; i++) {
+            console.log(`${completeTodo}, ${i + 1} ********`)
+            if(completeTodo === i + 1) {
+                isComplete[i] = true
+                console.log(`${i}, ${isComplete[i]}`)
+            }
+        }
     }
 
 }
