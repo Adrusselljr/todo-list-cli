@@ -16,13 +16,7 @@ while(true) {
         console.log(`You have ${list.length} to-do item(s).`)
         
         for(let i = 0; i < list.length; i++) {
-            let output = isComplete[i]
-            if(isComplete[i] === true) {
-                output = "[Complete]"
-            }
-            else {
-                output = "[Incomplete]"
-            }
+            let output = isComplete[i] === true ? "[Complete]" : "[Incomplete]"
             console.log(`${i + 1}. ${output} ${list[i]}`)
         }
     }
@@ -45,10 +39,8 @@ while(true) {
         let completeTodo = Number(prompt("Which to-do item would you like to complete? "))
 
         for(let i = 0; i < isComplete.length; i++) {
-            console.log(`${completeTodo}, ${i + 1} ********`)
             if(completeTodo === i + 1) {
                 isComplete[i] = true
-                console.log(`${i}, ${isComplete[i]}`)
             }
         }
     }
