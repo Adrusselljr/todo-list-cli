@@ -22,9 +22,11 @@ while(true) {
     }
 
     let areAnyComplete = false
+    let count = 0
     for(let i = 0; i < isComplete.length; i++) {
-        const complete1 = isComplete[i]
-        if(complete1 === true) {
+        if(isComplete[i] === true) {
+            count++
+            console.log("count is", count)
             areAnyComplete = true
         }
     }
@@ -34,12 +36,14 @@ while(true) {
     console.log("[1] Create a to-do item")
 
     if(list.length > 0) {
-        if(areAnyComplete === false) {
-            console.log("[2] Complete a to-do item")
+        if(count === isComplete.length) {
+            console.log("[3] Incomplete a to-do item")
         }
         else {
             console.log("[2] Complete a to-do item")
-            console.log("[3] Incomplete a to-do item")
+            if(areAnyComplete === true) {
+                console.log("[3] Incomplete a to-do item")
+            }
         }
         console.log("[4] Delete a to-do item")
     }
