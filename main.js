@@ -31,7 +31,6 @@ while(true) {
     }
     
     console.log("~ Select an action ~")
-
     console.log("[1] Create a to-do item")
 
     if(list.length > 0) {
