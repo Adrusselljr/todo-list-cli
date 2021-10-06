@@ -26,7 +26,6 @@ while(true) {
     for(let i = 0; i < isComplete.length; i++) {
         if(isComplete[i] === true) {
             count++
-            console.log("count is", count)
             areAnyComplete = true
         }
     }
